@@ -2,3 +2,4 @@ Flask
 Flask-JWT-Extended
 Flask-MySQLdb
 cryptography
+python-dotenv
