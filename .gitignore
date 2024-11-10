@@ -1,0 +1,47 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environment
+venv/
+env/
+
+# Flask configuration file
+instance/
+
+# Python-specific files
+*.pyc
+*.pyo
+*.pyd
+
+# Django stuff:
+*.log
+*.pot
+*.mo
+
+# Angular build files
+frontend/dist/
+frontend/node_modules/
+
+# Angular environment files
+frontend/src/environments/environment*.ts
+
+# Docker files
+*.env
+docker-compose.override.yml
+*.log
+
+# MySQL Database
+db/data/
+db/*.sql
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db
