@@ -24,6 +24,11 @@ services:
       - "4200:4200"
     depends_on:
       - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
 
   db:
     image: mysql:8.0

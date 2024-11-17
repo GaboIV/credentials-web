@@ -14,7 +14,7 @@ def login():
     logging.info(f"Login attempt with username: {username} and password: {password}")
 
     cursor = db.cursor()
-    logging.info(f"SELECT * FROM users WHERE username='{username}' AND password='{password}'")
+    cursor.execute("SELECT * FROM users WHERE username=%s AND password=%s", (username, password))
     user = cursor.fetchone()
     db.commit()
     cursor.close()
