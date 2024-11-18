@@ -1,0 +1,14 @@
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color de texto */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049; /* Color de fondo cuando se pasa el ratón */
+}

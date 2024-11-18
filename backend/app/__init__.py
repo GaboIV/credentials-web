@@ -1,15 +1,16 @@
+import MySQLdb
 import logging
 from flask import Flask
-from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 from app.config import Config
-import MySQLdb
+from flask_jwt_extended import JWTManager
 
 # Configuración del logging
 logging.basicConfig(
-    level=logging.INFO,  # Nivel de log (INFO, DEBUG, ERROR, etc.)
-    format='%(asctime)s - %(levelname)s - %(message)s',  # Formato del log
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.StreamHandler()  # Muestra los logs en la consola
+        logging.StreamHandler()
     ]
 )
 
@@ -18,6 +19,7 @@ db = None
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+    CORS(app, resources={r"/auth/*": {"origins": "http://localhost:4200"}})
     jwt = JWTManager(app)
 
     global db

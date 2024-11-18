@@ -36,4 +36,4 @@ def get_credentials():
     credentials = cursor.fetchall()
     db.commit()
     cursor.close()
-    return jsonify(credentials=credentials)
+    return jsonify(credentials=[{"id": cred[0], "name": cred[1], "encrypt_value": cred[2]} for cred in credentials])

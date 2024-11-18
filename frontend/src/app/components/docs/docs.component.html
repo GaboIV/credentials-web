@@ -1,1 +1,18 @@
-<p>docs works!</p>
+<div *ngIf="credentials.length > 0; else noCredentials">
+  <div>
+    <h3>Credentials</h3>
+    <p style="font-size: smaller;">Click any button to copy the registered value.</p>
+  </div>
+  <div *ngFor="let credential of credentials">
+    <button (click)="copyToClipboard(credential.encrypt_value)">
+      {{ credential.name }}
+    </button>
+    <div *ngIf="copiedId === credential.id" class="copy-message">
+      Copied!
+    </div>
+  </div>
+</div>
+
+<ng-template #noCredentials>
+  <p>No credentials found.</p>
+</ng-template>
